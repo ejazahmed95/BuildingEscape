@@ -7,7 +7,10 @@ Binaries/
 DerivedDataCache/
 Intermediate/
 Saved/
-Content/StarterContent/
+Content/StarterContent/Textures
+Content/StarterContent/HDRI
+Content/StarterContent/Audio
+Content/StarterContent/Maps
 
 ######################
 # VS Generated Files #
@@ -15,3 +18,4 @@ Content/StarterContent/
 *.opendb
 *.VC.db
 *.ipch
+*.suo

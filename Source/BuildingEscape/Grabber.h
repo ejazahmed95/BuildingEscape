@@ -44,5 +44,7 @@ private:
 	void SetupInputComponent();
 
 	const FHitResult GetFirstPhysicsBodyInReach();
+
+	FTwoVectors GetLineTracePoints();
 	
 };

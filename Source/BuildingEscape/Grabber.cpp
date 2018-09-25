@@ -58,7 +58,7 @@ void UGrabber::Grab() {
 	auto ComponentToGrab = HitResult.GetComponent(); // Gets the mesh component in this case
 	auto ActorHit = HitResult.GetActor();
 
-	if (ActorHit) {
+	if (ActorHit && PhysicsHandle) {
 		PhysicsHandle->GrabComponent(
 			ComponentToGrab,
 			NAME_None, // No bones needed
@@ -69,6 +69,7 @@ void UGrabber::Grab() {
 }
 
 void UGrabber::Release() {
+	if (!PhysicsHandle) { return; }
 	PhysicsHandle->ReleaseComponent();
 }
 
@@ -88,6 +89,7 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 		10.f
 	);*/
 
+	if (!PhysicsHandle) { return; }
 	if (PhysicsHandle->GrabbedComponent) {
 		PhysicsHandle->SetTargetLocation(GetLineTracePoints().v2);
 	}
